@@ -24,7 +24,7 @@ public class JointAccountEntity  {
     private String wifePhone;
 
     private BigDecimal balance;
-    private BigDecimal limit;
+    private BigDecimal credit_limit;
 
     // Construtor vazio exigido pelo JPA
     public JointAccountEntity() {
@@ -35,7 +35,7 @@ public class JointAccountEntity  {
     }
 
     public synchronized boolean withdraw(BigDecimal amount) {
-        if (this.balance.add(this.limit).compareTo(amount) >= 0) {
+        if (this.balance.add(this.credit_limit).compareTo(amount) >= 0) {
             this.balance = this.balance.subtract(amount);
             return true;
         }
