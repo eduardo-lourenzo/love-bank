@@ -5,16 +5,12 @@ import org.springframework.context.ApplicationEvent;
 
 @Getter
 public class TransactionEvent extends ApplicationEvent {
-    private final Long accountId;
+    private final JointAccountEntity jointAccountEntity;
     private final String message;
-    private final String husbandPhone;
-    private final String wifePhone;
 
-    public TransactionEvent(Object source, Long accountId, String message, String husbandPhone, String wifePhone) {
+    public TransactionEvent(Object source, JointAccountEntity jointAccountEntity, String message) {
         super(source);
-        this.accountId = accountId;
+        this.jointAccountEntity = jointAccountEntity;
         this.message = message;
-        this.husbandPhone = husbandPhone;
-        this.wifePhone = wifePhone;
     }
 }
