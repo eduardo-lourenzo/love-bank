@@ -3,9 +3,11 @@ package br.edu.zup.love_bank;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 
+@Getter
 public class JointAccountEntity  {
 
     @Id
@@ -32,5 +34,4 @@ public class JointAccountEntity  {
         return false;
     }
 
-    // Getters and setters omitted for brevity
 }
