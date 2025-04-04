@@ -7,4 +7,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false # Desative o show-sql para evitar logs SQL no console
+  sql:
+    init:
+      mode: always # Garante que os scripts de inicialização sejam executados, se houver
+
+logging:
+  level:
+    org.hibernate.SQL: warn # Reduz os logs de SQL do Hibernate para WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: warn # Reduz os logs de binding de parâmetros para WARN
