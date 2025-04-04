@@ -24,6 +24,10 @@ public class JointAccountEntity  {
     private BigDecimal balance;
     private BigDecimal limit;
 
+    // Construtor vazio exigido pelo JPA
+    public JointAccountEntity() {
+    }
+
     public synchronized void deposit(BigDecimal amount) {
         this.balance = this.balance.add(amount);
     }
